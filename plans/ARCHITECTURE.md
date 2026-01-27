@@ -1,6 +1,6 @@
 # TanStack Start Landing Page - Architecture & Clone Guide
 
-This document provides a comprehensive overview of the McQueen Solutions landing page architecture and serves as a guide for creating new similar sites (e.g., McQueen Logistics).
+This document provides a comprehensive overview of the McQueen Logistics landing page architecture and serves as a guide for creating new similar sites.
 
 ## Table of Contents
 
@@ -33,7 +33,7 @@ This document provides a comprehensive overview of the McQueen Solutions landing
 ## Project Structure
 
 ```
-mcqueen-solutions/
+mcqueen-logistics/
 ├── public/                    # Static assets
 │   ├── favicon.ico
 │   ├── logo192.png
@@ -198,7 +198,7 @@ Edit [`src/routes/__root.tsx`](../src/routes/__root.tsx:19-21):
 
 ```typescript
 {
-  title: "McQueen Solutions - Innovative Solutions for Data Science",
+  title: "McQueen Logistics - Your Tagline Here",
 }
 ```
 
@@ -212,7 +212,7 @@ Edit [`src/components/Header.tsx`](../src/components/Header.tsx:8-14):
 </span>
 <span className="text-gray-400 font-light text-xl">|</span>
 <span className="text-gray-400 font-light text-xl tracking-wide">
-  Solutions
+  Logistics
 </span>
 ```
 
@@ -221,8 +221,8 @@ Edit [`src/components/Header.tsx`](../src/components/Header.tsx:8-14):
 Edit [`src/routes/index.tsx`](../src/routes/index.tsx:61-69):
 
 ```tsx
-<h1>Innovative Solutions for Data Science</h1>
-<p>McQueen Solutions provides enhanced mission capabilities...</p>
+<h1>Your Headline Here</h1>
+<p>McQueen Logistics provides enhanced mission capabilities...</p>
 ```
 
 ### 5. Feature Cards
@@ -249,7 +249,7 @@ Each section (Cloud, Cyber, DevSecOps, Tactical) follows the same pattern:
 Edit [`src/routes/index.tsx`](../src/routes/index.tsx:360-381):
 
 ```tsx
-<p>© {new Date().getFullYear()} · McQueen Solutions. All rights reserved.</p>
+<p>© {new Date().getFullYear()} · McQueen Logistics. All rights reserved.</p>
 ```
 
 ### 8. Public Assets
@@ -323,7 +323,7 @@ Edit [`src/components/Header.tsx`](../src/components/Header.tsx):
 ```tsx
 <span className="text-brand-primary font-bold text-xl">MCQUEEN</span>
 <span className="text-gray-400 font-light text-xl">|</span>
-<span className="text-gray-400 font-light text-xl">Logistics</span>
+<span className="text-gray-400 font-light text-xl">YourBrand</span>
 ```
 
 ### Step 6: Update Content Sections

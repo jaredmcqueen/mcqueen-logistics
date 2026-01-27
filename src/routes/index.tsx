@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Box, Brain, Cloud, Code, Network, Shield } from "lucide-react";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,37 +13,17 @@ export const Route = createFileRoute("/")({ component: HomePage });
 
 function HomePage() {
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen bg-white">
 			<Header />
 
-			{/* Hero Section */}
-			<HeroSection />
+			<main className="pt-20">
+				<HeroSection />
+				<CertificationsSection />
+				<ServicesSection />
+				<ProjectsSection />
+				<ContactSection />
+			</main>
 
-			{/* Join Our Team Section */}
-			<JoinTeamSection />
-
-			{/* Cloud Engineering Section */}
-			<CloudEngineeringSection />
-
-			{/* Cyber Security Section */}
-			<CyberSecuritySection />
-
-			{/* DevSecOps Section */}
-			<DevSecOpsSection />
-
-			{/* Tactical Edge Section */}
-			<TacticalEdgeSection />
-
-			{/* Services Grid Section */}
-			<ServicesGridSection />
-
-			{/* DoD/IC Support Banner */}
-			<DoDSupportSection />
-
-			{/* Partner CTA Section */}
-			<PartnerSection />
-
-			{/* Footer */}
 			<Footer />
 		</div>
 	);
@@ -52,271 +31,96 @@ function HomePage() {
 
 function HeroSection() {
 	return (
-		<section className="relative bg-mcqueen-dark pt-24 pb-16 overflow-hidden">
-			{/* Background gradient overlay */}
-			<div className="absolute inset-0 bg-gradient-to-br from-mcqueen-dark via-mcqueen-dark to-slate-900" />
-
-			<div className="container mx-auto px-6 relative z-10">
-				<div className="max-w-3xl mb-16">
-					<h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-						Innovative Solutions for Data Science
-					</h1>
-					<p className="text-gray-300 text-lg leading-relaxed">
-						McQueen Solutions provides enhanced mission capabilities for
-						Intelligence Community and DoD customers through our innovative IT
-						solutions, engineering industry expertise, and commitment to
-						delivering high-quality products and services.
-					</p>
-				</div>
-
-				{/* Feature Cards */}
-				<div className="grid md:grid-cols-3 gap-6">
-					<FeatureCard
-						icon={<Code className="size-8 text-mcqueen-red" />}
-						title="Code"
-						description="We deliver quality software using Agile methodologies that prioritize collaboration, communication, and rapid iterations to ensure we are meeting our customers' needs and delivering products that are both efficient and effective."
-					/>
-					<FeatureCard
-						icon={<Brain className="size-8 text-mcqueen-red" />}
-						title="AI / ML"
-						description="Our team of experienced data scientists use advanced algorithms to analyze large amounts of data and identify patterns that would be impossible to detect manually. We provide insights and predictions that enable our clients to make data-driven decisions."
-					/>
-					<FeatureCard
-						icon={<Cloud className="size-8 text-mcqueen-red" />}
-						title="Cloud"
-						description="We work closely with our clients to understand their unique business needs and develop custom solutions that leverage the latest cloud technologies, including public, private, and hybrid clouds."
-					/>
-				</div>
-			</div>
-		</section>
-	);
-}
-
-function FeatureCard({
-	icon,
-	title,
-	description,
-}: {
-	icon: React.ReactNode;
-	title: string;
-	description: string;
-}) {
-	return (
-		<Card className="bg-slate-800/50 border-slate-700 text-white">
-			<CardHeader>
-				<div className="flex items-center gap-3">
-					{icon}
-					<CardTitle className="text-xl text-white">{title}</CardTitle>
-				</div>
-			</CardHeader>
-			<CardContent>
-				<CardDescription className="text-gray-400 text-sm leading-relaxed">
-					{description}
-				</CardDescription>
-			</CardContent>
-		</Card>
-	);
-}
-
-function JoinTeamSection() {
-	return (
-		<section className="bg-gray-100 py-16">
-			<div className="container mx-auto px-6 text-center">
-				<h2 className="text-3xl font-bold text-gray-900 mb-6">Join Our Team</h2>
+		<section className="relative bg-slate-900 text-white">
+			<div className="absolute inset-0 bg-slate-800/80" />
+			<div className="container mx-auto px-6 py-28 relative z-10 text-center">
+				<p className="text-sm uppercase tracking-[0.2em] text-gray-300 mb-4">
+					Geared up to provide
+				</p>
+				<h1 className="text-4xl md:text-5xl font-bold mb-6">
+					Top Notch Service
+				</h1>
+				<p className="text-gray-200 max-w-2xl mx-auto mb-8">
+					Placeholder hero description about delivering reliable procurement,
+					logistics, and project support for public sector and enterprise teams.
+				</p>
 				<Button className="bg-mcqueen-red hover:bg-mcqueen-red/90 text-white">
-					Apply
+					Request a Quote
 				</Button>
 			</div>
 		</section>
 	);
 }
 
-function CloudEngineeringSection() {
+function CertificationsSection() {
+	const certifications = ["SWaM", "eVA", "Micro"];
+
 	return (
-		<section className="py-20 bg-white">
-			<div className="container mx-auto px-6">
-				<div className="grid md:grid-cols-2 gap-12 items-center">
-					<div>
-						<h2 className="text-3xl font-bold text-gray-900 mb-6">
-							Cloud Engineering
-						</h2>
-						<p className="text-gray-600 leading-relaxed">
-							We understand that the cloud is the backbone of modern-day
-							businesses, and our cloud engineering services are designed to
-							help our clients take full advantage of its benefits. Our team of
-							certified cloud engineers possesses a wealth of experience in
-							developing, deploying, and managing cloud solutions on all major
-							cloud platforms, including AWS, Azure, and Google Cloud and
-							Kubernetes public / private clouds.
-						</p>
-					</div>
-					<div className="flex justify-center">
-						<ServiceIllustration variant="cloud" />
-					</div>
+		<section className="bg-white">
+			<div className="container mx-auto px-6 py-10">
+				<div className="flex flex-wrap items-center justify-center gap-8">
+					{certifications.map((item) => (
+						<span
+							key={item}
+							className="text-lg font-semibold text-gray-500"
+						>
+							{item}
+						</span>
+					))}
 				</div>
 			</div>
 		</section>
 	);
 }
 
-function CyberSecuritySection() {
-	return (
-		<section className="py-20 bg-gray-50">
-			<div className="container mx-auto px-6">
-				<div className="grid md:grid-cols-2 gap-12 items-center">
-					<div className="flex justify-center order-2 md:order-1">
-						<ServiceIllustration variant="security" />
-					</div>
-					<div className="order-1 md:order-2">
-						<h2 className="text-3xl font-bold text-gray-900 mb-6">
-							Cyber Security
-						</h2>
-						<p className="text-gray-600 leading-relaxed">
-							Our team understands the critical role that security plays in
-							safeguarding sensitive data and protecting against cyber threats.
-							We incorporate security best practices into every stage of our
-							software development lifecycle, from design to deployment. Our
-							team of experts employs a wide range of security measures,
-							including secure coding practices, encryption, access controls,
-							network security, and more, to ensure that our clients' systems
-							are protected against potential threats.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
-}
-
-function DevSecOpsSection() {
-	return (
-		<section className="py-20 bg-white">
-			<div className="container mx-auto px-6">
-				<div className="grid md:grid-cols-2 gap-12 items-center">
-					<div>
-						<h2 className="text-3xl font-bold text-gray-900 mb-6">DevSecOps</h2>
-						<p className="text-gray-600 leading-relaxed">
-							We specialize in building scalable architectures that are designed
-							to meet the unique needs of our customers. We leverage cloud-based
-							technologies and DevOps practices to create highly available and
-							fault-tolerant systems that can scale to handle massive amounts of
-							data and traffic. Our team of experienced engineers are experts in
-							containerization, microservices, and distributed systems, ensuring
-							that our architectures are not only scalable, but also highly
-							efficient and easy to manage.
-						</p>
-					</div>
-					<div className="flex justify-center">
-						<ServiceIllustration variant="devops" />
-					</div>
-				</div>
-			</div>
-		</section>
-	);
-}
-
-function TacticalEdgeSection() {
-	return (
-		<section className="py-20 bg-gray-50">
-			<div className="container mx-auto px-6">
-				<div className="grid md:grid-cols-2 gap-12 items-center">
-					<div className="flex justify-center order-2 md:order-1">
-						<ServiceIllustration variant="tactical" />
-					</div>
-					<div className="order-1 md:order-2">
-						<h2 className="text-3xl font-bold text-gray-900 mb-6">
-							Tactical Edge
-						</h2>
-						<p className="text-gray-600 leading-relaxed">
-							Delivering mission capabilities in real-time containerized
-							environments is important to our mission partners. We leverage
-							private cloud platforms, including Kubernetes, to create solutions
-							that can operate at the tactical edge. Our team has a deep
-							understanding of Kubernetes and how it can be used to deploy and
-							manage containerized workloads in edge environments. By leveraging
-							these technologies, we can provide our clients with reliable,
-							scalable, and secure solutions that can operate in remote,
-							disconnected, and low- bandwidth environments.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
-}
-
-function ServiceIllustration({
-	variant,
-}: {
-	variant: "cloud" | "security" | "devops" | "tactical";
-}) {
-	const iconMap = {
-		cloud: <Cloud className="size-24 text-mcqueen-red" />,
-		security: <Shield className="size-24 text-mcqueen-red" />,
-		devops: <Network className="size-24 text-mcqueen-red" />,
-		tactical: <Box className="size-24 text-mcqueen-red" />,
-	};
-
-	return (
-		<div className="w-64 h-64 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center shadow-lg">
-			{iconMap[variant]}
-		</div>
-	);
-}
-
-function ServicesGridSection() {
+function ServicesSection() {
 	const services = [
 		{
-			title: "Data Analytics and Visualizations",
+			title: "Bridge Materials",
 			description:
-				"Using advanced data analytics and visualization techniques, we provide actionable intelligence to our clients. We use powerful tools like Elasticsearch, Solr, and Kibana to analyze large amounts of data and create compelling visualizations that enable our clients to make data-driven decisions.",
-			logos: ["Solr", "Elastic"],
+				"Placeholder summary describing material sourcing, delivery coordination, and project readiness support.",
 		},
 		{
-			title: "Software Development",
+			title: "Facility Supplies",
 			description:
-				"Our experienced team of engineers uses languages like Go, Python, and Rust on the backend, and React and NextJS on the frontend to create robust, scalable, and secure software using modern techniques and rigorous testing.",
-			logos: ["Go", "R"],
+				"Placeholder summary describing interior supplies, safety gear, and facility upkeep materials.",
 		},
 		{
-			title: "Cloud Computing",
+			title: "Procurement & Administrative Services",
 			description:
-				"Leveraging the power of cloud computing and distributed processing, we deliver fast, scalable, and secure applications to our users. Our experienced engineers use platforms like OpenShift, Rancher, and RKE2 to build and deploy secure cluster solutions that harness the true cloud-native philosophy worldwide.",
-			logos: ["OpenShift", "Rancher"],
+				"Placeholder summary for procurement assistance, administrative support, and vendor management.",
 		},
 		{
-			title: "AI / ML Workflows",
+			title: "Equipment Support",
 			description:
-				"We use advanced AI/ML workflows to help geospatial analysts detect anomalies and gain insights from large imagery datasets. By leveraging cutting edge techniques like object detection and predictive modeling, we help analysts quickly identify patterns and trends that might be missed using traditional methods.",
-			logos: ["PyTorch", "TensorFlow"],
+				"Placeholder summary for equipment rentals, maintenance coordination, and field support.",
 		},
 	];
 
 	return (
-		<section className="py-20 bg-white">
-			<div className="container mx-auto px-6">
-				<div className="grid md:grid-cols-2 gap-8">
+		<section id="services" className="bg-gray-50">
+			<div className="container mx-auto px-6 py-16">
+				<div className="text-center mb-12">
+					<h2 className="text-3xl font-bold text-gray-900">Services</h2>
+					<p className="text-gray-600 max-w-2xl mx-auto mt-4">
+						We are a small, woman owned business specializing in purchasing
+						assistance for state and county agencies, educational institutions,
+						and local government entities.
+					</p>
+				</div>
+				<div className="grid gap-8 md:grid-cols-2">
 					{services.map((service) => (
 						<Card key={service.title} className="border-gray-200">
 							<CardHeader>
-								<CardTitle className="text-xl text-gray-900">
+								<div className="h-40 bg-gray-200 rounded-lg" />
+								<CardTitle className="text-xl text-gray-900 mt-4">
 									{service.title}
 								</CardTitle>
 							</CardHeader>
-							<CardContent className="space-y-4">
+							<CardContent>
 								<CardDescription className="text-gray-600 leading-relaxed">
 									{service.description}
 								</CardDescription>
-								<div className="flex gap-4 pt-2">
-									{service.logos.map((logo) => (
-										<span
-											key={logo}
-											className="px-3 py-1 bg-gray-100 rounded text-sm text-gray-600 font-medium"
-										>
-											{logo}
-										</span>
-									))}
-								</div>
 							</CardContent>
 						</Card>
 					))}
@@ -326,32 +130,126 @@ function ServicesGridSection() {
 	);
 }
 
-function DoDSupportSection() {
+function ProjectsSection() {
+	const largeProjects = [
+		{
+			title: "Bridge & Construction",
+			description: "Placeholder: lumber, concrete, rebar, PVC, hardware.",
+		},
+		{
+			title: "Office Renovation",
+			description: "Placeholder: flooring, lighting, cabinetry, coverings.",
+		},
+		{
+			title: "Landscaping",
+			description: "Placeholder: brick, stone, decking, park benches.",
+		},
+	];
+
+	const smallProjects = [
+		{
+			title: "Facility Supplies",
+			description: "Placeholder: cleaning, paint, filters, fixtures.",
+		},
+		{
+			title: "Office Supplies",
+			description: "Placeholder: small electronics, office equipment.",
+		},
+		{
+			title: "Shop Materials",
+			description: "Placeholder: tools, safety equipment, shop supplies.",
+		},
+	];
+
 	return (
-		<section className="py-16 bg-mcqueen-dark">
-			<div className="container mx-auto px-6 text-center">
-				<h2 className="text-2xl font-semibold text-white">
-					Proudly Supporting DoD and the IC
-				</h2>
+		<section id="projects" className="bg-white">
+			<div className="container mx-auto px-6 py-16">
+				<div className="text-center mb-12">
+					<h2 className="text-3xl font-bold text-gray-900">Projects</h2>
+					<p className="text-gray-600 max-w-2xl mx-auto mt-4">
+						Placeholder summary about recent project fulfillment and on-time
+						delivery for public sector teams.
+					</p>
+				</div>
+
+				<div className="grid gap-10 lg:grid-cols-2">
+					<ProjectColumn title="Large Projects" items={largeProjects} />
+					<ProjectColumn title="Small Projects" items={smallProjects} />
+				</div>
 			</div>
 		</section>
 	);
 }
 
-function PartnerSection() {
+function ProjectColumn({
+	title,
+	items,
+}: {
+	title: string;
+	items: { title: string; description: string }[];
+}) {
 	return (
-		<section className="py-20 bg-slate-900">
-			<div className="container mx-auto px-6 text-center">
-				<h2 className="text-3xl font-bold text-white mb-4">
-					Partner with McQueen Solutions
-				</h2>
-				<p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-					We're always looking for new and innovative ways to collaborate and
-					help our clients achieve their goals.
-				</p>
-				<Button className="bg-mcqueen-red hover:bg-mcqueen-red/90 text-white">
-					Contact Us
-				</Button>
+		<div>
+			<h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
+				{title}
+			</h3>
+			<div className="space-y-6">
+				{items.map((item) => (
+					<div
+						key={item.title}
+						className="flex flex-col sm:flex-row gap-4 items-start"
+					>
+						<div className="w-full sm:w-32 h-20 bg-gray-200 rounded-lg" />
+						<div>
+							<h4 className="font-semibold text-gray-900">{item.title}</h4>
+							<p className="text-gray-600 text-sm mt-2">
+								{item.description}
+							</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+}
+
+function ContactSection() {
+	return (
+		<section id="contact" className="bg-gray-50">
+			<div className="container mx-auto px-6 py-16">
+				<div className="text-center mb-10">
+					<h2 className="text-3xl font-bold text-gray-900">Contact Us</h2>
+					<p className="text-gray-600 mt-4">
+						McQueen Logistics proudly supports Fredericksburg, Stafford,
+						Northern Neck, and Northern Virginia.
+					</p>
+				</div>
+				<div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+					<div className="h-72 bg-gray-200" />
+					<div className="grid gap-8 md:grid-cols-2 px-6 py-8">
+						<div>
+							<h3 className="text-lg font-semibold text-gray-900 mb-4">
+								How to reach us
+							</h3>
+							<ul className="space-y-2 text-gray-600 text-sm">
+								<li>Phone: 540-000-0000</li>
+								<li>Fax: 540-000-0001</li>
+								<li>Email: info@mcqueenlogistics.com</li>
+								<li>Address: 123 Placeholder Ave, VA</li>
+							</ul>
+						</div>
+						<div>
+							<h3 className="text-lg font-semibold text-gray-900 mb-4">
+								Why us? “Top notch service”
+							</h3>
+							<ul className="space-y-2 text-gray-600 text-sm">
+								<li>Fast and efficient turnaround</li>
+								<li>Detailed estimates and reporting</li>
+								<li>Exceptional customer support</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
@@ -359,22 +257,9 @@ function PartnerSection() {
 
 function Footer() {
 	return (
-		<footer className="bg-mcqueen-dark py-8 border-t border-slate-800">
-			<div className="container mx-auto px-6">
-				<div className="flex flex-col md:flex-row justify-between items-center gap-4">
-					<div className="flex items-center gap-4">
-						<a href="#" className="text-gray-400 hover:text-white text-sm">
-							Jobs
-						</a>
-						<a href="#" className="text-gray-400 hover:text-white text-sm">
-							Home
-						</a>
-					</div>
-					<p className="text-gray-500 text-sm">
-						© {new Date().getFullYear()} · McQueen Solutions. All rights
-						reserved.
-					</p>
-				</div>
+		<footer className="bg-mcqueen-dark py-10">
+			<div className="container mx-auto px-6 text-center text-gray-400 text-sm">
+				© {new Date().getFullYear()} · McQueen Logistics. All rights reserved.
 			</div>
 		</footer>
 	);

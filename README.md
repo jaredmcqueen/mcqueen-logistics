@@ -1,4 +1,4 @@
-# McQueen Solutions
+# McQueen Logistics
 
 A modern landing page built with TanStack Start, React 19, and Tailwind CSS v4.
 
@@ -50,10 +50,10 @@ The project includes a multi-stage Dockerfile optimized for production:
 
 ```bash
 # Build the Docker image
-docker build -t mcqueen-solutions .
+docker build -t mcqueen-logistics .
 
 # Run the container
-docker run -p 3000:3000 mcqueen-solutions
+docker run -p 3000:3000 mcqueen-logistics
 ```
 
 The container:
