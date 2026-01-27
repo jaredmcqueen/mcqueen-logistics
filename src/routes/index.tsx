@@ -156,16 +156,16 @@ function ServicesSection() {
 					{services.map((service) => (
 						<Card
 							key={service.title}
-							className="border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden group"
+							className="border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden group pt-0 mb-2"
 						>
 							<div className="overflow-hidden">
 								<img
 									src={service.image}
 									alt={service.title}
-									className="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
+									className="h-64 w-full object-cover object-top group-hover:scale-105 transition-transform duration-500 rounded-t-lg"
 								/>
 							</div>
-							<CardContent className="pt-6">
+							<CardContent className="pt-0">
 								<CardTitle className="text-xl text-gray-900 mb-3">
 									{service.title}
 								</CardTitle>
@@ -255,11 +255,11 @@ function ProjectColumn({
 						key={item.title}
 						className="flex flex-col sm:flex-row gap-0 overflow-hidden hover:shadow-lg transition-all duration-300 border-gray-200 hover:border-gray-300 p-0"
 					>
-						<div className="sm:w-40 flex-shrink-0">
+						<div className="sm:w-50 flex-shrink-0">
 							<img
 								src={item.image}
 								alt={item.title}
-								className="w-full h-32 sm:h-full object-cover sm:rounded-l-xl"
+								className="w-full h-40 sm:h-full object-cover sm:rounded-l-xl"
 							/>
 						</div>
 						<CardContent className="flex-1 py-4 px-5 flex flex-col justify-center">
@@ -285,12 +285,12 @@ function ContactSection() {
 					title="Contact Us"
 					description="McQueen Logistics proudly supports Fredericksburg, Stafford, Northern Neck, and Northern Virginia."
 				/>
-				<Card className="overflow-hidden shadow-xl border-gray-200">
+				<Card className="overflow-hidden shadow-xl border-gray-200 p-0">
 					<div className="relative">
 						<img
 							src="/map.png"
 							alt="Service area map showing Fredericksburg, Stafford, Northern Neck, and Northern Virginia"
-							className="h-80 w-full object-cover"
+							className="h-135 w-full object-cover"
 						/>
 						<div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
 					</div>
