@@ -17,7 +17,7 @@ function HomePage() {
 		<div className="min-h-screen bg-white">
 			<Header />
 
-			<main className="pt-20">
+			<main>
 				<HeroSection />
 				<CertificationsSection />
 				<ServicesSection />
@@ -32,9 +32,13 @@ function HomePage() {
 
 function HeroSection() {
 	return (
-		<section className="relative bg-slate-900 text-white">
-			<div className="absolute inset-0 bg-slate-800/80" />
-			<div className="container mx-auto px-6 py-28 relative z-10 text-center">
+		<section className="relative bg-slate-900 text-white min-h-[650px] pt-16">
+			<div
+				className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+				style={{ backgroundImage: 'url(/header.jpg)' }}
+			/>
+			<div className="absolute inset-0 bg-slate-900/50" />
+			<div className="container mx-auto px-6 py-32 relative z-10 text-center flex flex-col justify-center min-h-[600px]">
 				<p className="text-sm uppercase tracking-[0.2em] text-gray-300 mb-4">
 					Geared up to provide
 				</p>
@@ -54,19 +58,23 @@ function HeroSection() {
 }
 
 function CertificationsSection() {
-	const certifications = ["SWaM", "eVA", "Micro"];
+	const certifications = [
+		{ name: "SWaM", logo: "/SWAM.png", alt: "SWaM Certification" },
+		{ name: "eVA", logo: "/eva-logo.jpg", alt: "eVA Certification" },
+		{ name: "Micro", logo: "/micro.png", alt: "Micro Business Certification" },
+	];
 
 	return (
 		<section className="bg-white">
 			<div className="container mx-auto px-6 py-10">
 				<div className="flex flex-wrap items-center justify-center gap-8">
 					{certifications.map((item) => (
-						<span
-							key={item}
-							className="text-lg font-semibold text-gray-500"
-						>
-							{item}
-						</span>
+						<img
+							key={item.name}
+							src={item.logo}
+							alt={item.alt}
+							className="h-12 object-contain"
+						/>
 					))}
 				</div>
 			</div>
@@ -80,21 +88,25 @@ function ServicesSection() {
 			title: "Bridge Materials",
 			description:
 				"We bridge the gap between needing supplies and job completion. Any supplies needed from nuts and bolts to lumber and concrete. Whatever is needed for your project, we are the perfect resource.",
+			image: "/bridge-materials.jpg",
 		},
 		{
 			title: "Facility Supplies",
 			description:
 				"For all project materials needed from mini-blinds to major remodel we can provide your needs from roof top to sidewalk.",
+			image: "/facility-supplies.jpg",
 		},
 		{
 			title: "Procurement & Administrative Services",
 			description:
 				"Small supplies to large projects, we can be your personal resource to meet all your purchasing needs.",
+			image: "/procurement.jpg",
 		},
 		{
 			title: "Equipment Support",
 			description:
 				"Vehicle interior and exterior accessories. Specialized and \"up-fitting\" components, small electronics & equipment, shop materials and tools.",
+			image: "/collage.png",
 		},
 	];
 
@@ -113,7 +125,11 @@ function ServicesSection() {
 					{services.map((service) => (
 						<Card key={service.title} className="border-gray-200">
 							<CardHeader>
-								<div className="h-40 bg-gray-200 rounded-lg" />
+								<img
+									src={service.image}
+									alt={service.title}
+									className="h-60 w-full object-cover rounded-lg"
+								/>
 								<CardTitle className="text-xl text-gray-900 mt-4">
 									{service.title}
 								</CardTitle>
@@ -136,14 +152,17 @@ function ProjectsSection() {
 		{
 			title: "Bridge & Construction",
 			description: "Lumber, concrete, rebar, PVC, construction hardware",
+			image: "/construction.jpg",
 		},
 		{
 			title: "Office Renovation",
 			description: "Flooring, lighting, cabinetry, window coverings",
+			image: "/renovation.jpg",
 		},
 		{
 			title: "Landscaping",
 			description: "Brick and stone, decking material, park benches",
+			image: "/landscape.jpg",
 		},
 	];
 
@@ -151,14 +170,17 @@ function ProjectsSection() {
 		{
 			title: "Facility Supplies",
 			description: "Window coverings, shelving, paint, flooring materials, water filtration systems",
+			image: "/facility-supplies.jpg",
 		},
 		{
 			title: "Office Supplies",
 			description: "Small electronics, office equipment, phones, headsets",
+			image: "/office-supplies.jpg",
 		},
 		{
 			title: "Shop Materials",
 			description: "Tools, cabinets, hardware, safety equipment, shop supplies",
+			image: "/shop-materials.jpg",
 		},
 	];
 
@@ -187,7 +209,7 @@ function ProjectColumn({
 	items,
 }: {
 	title: string;
-	items: { title: string; description: string }[];
+	items: { title: string; description: string; image: string }[];
 }) {
 	return (
 		<div>
@@ -200,7 +222,11 @@ function ProjectColumn({
 						key={item.title}
 						className="flex flex-col sm:flex-row gap-4 items-start"
 					>
-						<div className="w-full sm:w-32 h-20 bg-gray-200 rounded-lg" />
+						<img
+							src={item.image}
+							alt={item.title}
+							className="w-full sm:w-40 h-32 object-cover rounded-lg"
+						/>
 						<div>
 							<h4 className="font-semibold text-gray-900">{item.title}</h4>
 							<p className="text-gray-600 text-sm mt-2">
@@ -226,7 +252,11 @@ function ContactSection() {
 					</p>
 				</div>
 				<div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-					<div className="h-72 bg-gray-200" />
+					<img
+						src="/map.png"
+						alt="Service area map showing Fredericksburg, Stafford, Northern Neck, and Northern Virginia"
+						className="h-72 w-full object-cover"
+					/>
 					<div className="grid gap-8 md:grid-cols-2 px-6 py-8">
 						<div>
 							<h3 className="text-lg font-semibold text-gray-900 mb-6">
