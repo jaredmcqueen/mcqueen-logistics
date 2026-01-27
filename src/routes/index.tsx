@@ -8,6 +8,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { Phone, Smartphone, Mail, Check } from "lucide-react";
 
 export const Route = createFileRoute("/")({ component: HomePage });
 
@@ -78,22 +79,22 @@ function ServicesSection() {
 		{
 			title: "Bridge Materials",
 			description:
-				"Placeholder summary describing material sourcing, delivery coordination, and project readiness support.",
+				"We bridge the gap between needing supplies and job completion. Any supplies needed from nuts and bolts to lumber and concrete. Whatever is needed for your project, we are the perfect resource.",
 		},
 		{
 			title: "Facility Supplies",
 			description:
-				"Placeholder summary describing interior supplies, safety gear, and facility upkeep materials.",
+				"For all project materials needed from mini-blinds to major remodel we can provide your needs from roof top to sidewalk.",
 		},
 		{
 			title: "Procurement & Administrative Services",
 			description:
-				"Placeholder summary for procurement assistance, administrative support, and vendor management.",
+				"Small supplies to large projects, we can be your personal resource to meet all your purchasing needs.",
 		},
 		{
 			title: "Equipment Support",
 			description:
-				"Placeholder summary for equipment rentals, maintenance coordination, and field support.",
+				"Vehicle interior and exterior accessories. Specialized and \"up-fitting\" components, small electronics & equipment, shop materials and tools.",
 		},
 	];
 
@@ -134,30 +135,30 @@ function ProjectsSection() {
 	const largeProjects = [
 		{
 			title: "Bridge & Construction",
-			description: "Placeholder: lumber, concrete, rebar, PVC, hardware.",
+			description: "Lumber, concrete, rebar, PVC, construction hardware",
 		},
 		{
 			title: "Office Renovation",
-			description: "Placeholder: flooring, lighting, cabinetry, coverings.",
+			description: "Flooring, lighting, cabinetry, window coverings",
 		},
 		{
 			title: "Landscaping",
-			description: "Placeholder: brick, stone, decking, park benches.",
+			description: "Brick and stone, decking material, park benches",
 		},
 	];
 
 	const smallProjects = [
 		{
 			title: "Facility Supplies",
-			description: "Placeholder: cleaning, paint, filters, fixtures.",
+			description: "Window coverings, shelving, paint, flooring materials, water filtration systems",
 		},
 		{
 			title: "Office Supplies",
-			description: "Placeholder: small electronics, office equipment.",
+			description: "Small electronics, office equipment, phones, headsets",
 		},
 		{
 			title: "Shop Materials",
-			description: "Placeholder: tools, safety equipment, shop supplies.",
+			description: "Tools, cabinets, hardware, safety equipment, shop supplies",
 		},
 	];
 
@@ -228,24 +229,45 @@ function ContactSection() {
 					<div className="h-72 bg-gray-200" />
 					<div className="grid gap-8 md:grid-cols-2 px-6 py-8">
 						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-4">
+							<h3 className="text-lg font-semibold text-gray-900 mb-6">
 								How to reach us
 							</h3>
-							<ul className="space-y-2 text-gray-600 text-sm">
-								<li>Phone: 540-000-0000</li>
-								<li>Fax: 540-000-0001</li>
-								<li>Email: info@mcqueenlogistics.com</li>
-								<li>Address: 123 Placeholder Ave, VA</li>
+							<ul className="space-y-4">
+								<li className="flex items-center gap-3 text-gray-900">
+									<Phone className="w-5 h-5 text-orange-500 flex-shrink-0" />
+									<span>540-720-5627</span>
+								</li>
+								<li className="flex items-center gap-3 text-gray-900">
+									<Smartphone className="w-5 h-5 text-orange-500 flex-shrink-0" />
+									<span>540-809-2848</span>
+								</li>
+								<li className="flex items-center gap-3 text-gray-900">
+									<Mail className="w-5 h-5 text-orange-500 flex-shrink-0" />
+									<span>brenda@mcqueenlogistics.com</span>
+								</li>
+								<li className="flex items-center gap-3 text-gray-900">
+									<Mail className="w-5 h-5 text-orange-500 flex-shrink-0" />
+									<span>mac@mcqueenlogistics.com</span>
+								</li>
 							</ul>
 						</div>
 						<div>
-							<h3 className="text-lg font-semibold text-gray-900 mb-4">
-								Why us? “Top notch service”
+							<h3 className="text-lg font-semibold text-gray-900 mb-6">
+								Why us? "top notch service"
 							</h3>
-							<ul className="space-y-2 text-gray-600 text-sm">
-								<li>Fast and efficient turnaround</li>
-								<li>Detailed estimates and reporting</li>
-								<li>Exceptional customer support</li>
+							<ul className="space-y-4">
+								<li className="flex items-center gap-3 text-gray-900">
+									<Check className="w-5 h-5 text-orange-500 flex-shrink-0" />
+									<span>Fast and Efficient</span>
+								</li>
+								<li className="flex items-center gap-3 text-gray-900">
+									<Check className="w-5 h-5 text-orange-500 flex-shrink-0" />
+									<span>Detailed Estimates</span>
+								</li>
+								<li className="flex items-center gap-3 text-gray-900">
+									<Check className="w-5 h-5 text-orange-500 flex-shrink-0" />
+									<span>Exceptional Customer Support</span>
+								</li>
 							</ul>
 						</div>
 					</div>
