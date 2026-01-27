@@ -23,6 +23,8 @@ code {
   --foreground: oklch(0.141 0.005 285.823);
   --mcqueen-red: #c41230;
   --mcqueen-dark: #0a1628;
+  --mcqueen-blue: #1e3a5f;
+  --mcqueen-gray: #6b7280;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
@@ -96,6 +98,8 @@ code {
   --color-foreground: var(--foreground);
   --color-mcqueen-red: var(--mcqueen-red);
   --color-mcqueen-dark: var(--mcqueen-dark);
+  --color-mcqueen-blue: var(--mcqueen-blue);
+  --color-mcqueen-gray: var(--mcqueen-gray);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
