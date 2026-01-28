@@ -34,11 +34,49 @@ export const Route = createRootRoute({
 			{
 				title: "McQueen Logistics - Top Notch Service",
 			},
+			{
+				name: "description",
+				content: "McQueen Logistics - Top Notch Service for all your logistics needs",
+			},
+			{
+				name: "theme-color",
+				content: "#ffffff",
+			},
 		],
 		links: [
 			{
 				rel: "stylesheet",
 				href: appCss,
+			},
+			// SVG favicon (modern browsers with dark mode support)
+			{
+				rel: "icon",
+				type: "image/svg+xml",
+				href: "/favicon.svg",
+			},
+			// PNG fallback for browsers without SVG support
+			{
+				rel: "icon",
+				type: "image/png",
+				sizes: "96x96",
+				href: "/favicon-96x96.png",
+			},
+			// Legacy ICO for older browsers
+			{
+				rel: "icon",
+				type: "image/x-icon",
+				href: "/favicon.ico",
+			},
+			// Apple touch icon for iOS devices
+			{
+				rel: "apple-touch-icon",
+				sizes: "180x180",
+				href: "/apple-touch-icon.png",
+			},
+			// Web app manifest
+			{
+				rel: "manifest",
+				href: "/site.webmanifest",
 			},
 		],
 	}),
