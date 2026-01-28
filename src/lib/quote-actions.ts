@@ -19,13 +19,14 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
 		const apiKey = process.env.RESEND_API_KEY || ''
 		const fromEmailAddress = process.env.FROM_EMAIL_ADDRESS || ''
 		const toRecipient1 = process.env.TO_RECIPIENT_1 || '';
+		const toRecipient2 = process.env.TO_RECIPIENT_2 || '';
 		const resend = new Resend(apiKey);
 
 		try {
 			const { data, error } = await resend.emails.send({
 				from: fromEmailAddress,
 				to: formData.email,
-				cc: toRecipient1,
+				cc: [toRecipient1, toRecipient2],
 				replyTo: formData.email,
 				subject: `McQueen Logistics Quote Request from ${formData.name}`,
 				html: `
@@ -37,7 +38,7 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
 						<p>${formData.details}</p>
 						<br />
 						<p style="font-size: 12px; color: #666;">
-							Note: This is an automated receipt. You can reply directly to this email to speak with our team.
+							Note: This is an automated receipt. To reach out to our team, visit our website for contact information.
 						</p>
 					</div>`,
 			});
