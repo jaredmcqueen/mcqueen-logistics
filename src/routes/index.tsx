@@ -52,7 +52,7 @@ function HeroSection({ onRequestQuote }: { onRequestQuote: () => void }) {
 					Top Notch Service
 				</h1>
 				<p className="text-white max-w-3xl mx-auto mb-10 text-xl md:text-2xl leading-relaxed font-medium drop-shadow-md">
-					For over a decade we've been your trusted partner for procurement, logistics, and project support.
+					For over a decade, we've been your trusted partner for procurement, logistics, and project support.
 					We help public sector agencies and enterprise teams get the supplies
 					they need—on time, every time.
 				</p>
