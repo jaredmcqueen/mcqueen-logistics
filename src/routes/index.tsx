@@ -46,13 +46,13 @@ function HeroSection({ onRequestQuote }: { onRequestQuote: () => void }) {
 			/>
 			<div className="container mx-auto px-6 py-32 relative z-10 text-center flex flex-col justify-center items-center min-h-[650px]">
 				<p className="text-xl uppercase tracking-[0.3em] text-white/90 mb-4 font-bold drop-shadow-md">
-					Geared Up to Provide
+					Celebrating 10 Years of Excellence
 				</p>
 				<h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-8r max-w-5xl drop-shadow-lg">
 					Top Notch Service
 				</h1>
 				<p className="text-white max-w-3xl mx-auto mb-10 text-xl md:text-2xl leading-relaxed font-medium drop-shadow-md">
-					Your trusted partner for procurement, logistics, and project support.
+					For over a decade we've been your trusted partner for procurement, logistics, and project support.
 					We help public sector agencies and enterprise teams get the supplies
 					they need—on time, every time.
 				</p>
