@@ -22,7 +22,7 @@ COPY . .
 RUN pnpm build
 
 # Stage 3: Production runtime
-FROM node:24-alpine AS runner
+FROM node:25-alpine AS runner
 
 WORKDIR /app
 
